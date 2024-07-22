@@ -4,7 +4,7 @@ const AppContext = createContext();
 
 const AppProvaider = ({children}) => {
 
-    const [projectsData, setProjectsData] = useState("nice");
+    const [projectsData, setProjectsData] = useState();
     const [theme, setTheme] = useState('light');
 
     //Projects data

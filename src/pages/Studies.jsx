@@ -2,6 +2,8 @@ import StudiesComp from "../components/StudiesComp";
 
 import {studiesData} from "../data/studiesData";
 
+// FALTA EL PDF DEL CV
+
 const Studies = () => {
 
     const {

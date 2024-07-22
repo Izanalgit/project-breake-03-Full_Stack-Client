@@ -1,15 +1,11 @@
-import { useState } from "react";
-
 const SoftSkills = ({title,skills}) => {
-    const [titleSkill, setTitleSkill] = useState(title);
-    const [dataSkills, setDataSkills] = useState(skills);
 
     return (
         <div className="softSkills">
-            <h3>{titleSkill}</h3>
+            <h3>{title}</h3>
             <p>
-                {skills.map((skill)=>(
-                    <span>{skill} </span>
+                {skills.map((skill,index)=>(
+                    <span key={title + index}>{skill} </span>
                 ))}
             </p>
         </div>
