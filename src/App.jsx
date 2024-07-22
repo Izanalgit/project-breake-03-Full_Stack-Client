@@ -3,13 +3,12 @@ import AppRoutes from "./routes/AppRoutes";
 import { useApp } from "./context/AppContext";
 import useFetchGET from "./hooks/useFetchGET";
 
-const API = "http://localhost:8080"
-const API_HEALTH = API +"/public/health";
-const API_DATA = API + "/public/projects";
-
 const App = () => {
 
-    const {getProjectsData} = useApp();
+    const {API,getProjectsData} = useApp();
+
+    const API_HEALTH = API +"/public/health";
+    const API_DATA = API + "/public/projects";
 
     const {data:health,status:pingAPI} = useFetchGET(API_HEALTH);
     const {data,status,errMsg} = useFetchGET(API_DATA);

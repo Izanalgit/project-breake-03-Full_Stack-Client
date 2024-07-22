@@ -6,6 +6,7 @@ const AppProvaider = ({children}) => {
 
     const [projectsData, setProjectsData] = useState();
     const [theme, setTheme] = useState('light');
+    const API = "http://localhost:8080";
 
     //Projects data
     const getProjectsData = (data) => {
@@ -23,6 +24,7 @@ const AppProvaider = ({children}) => {
         <AppContext.Provider value={{
             projectsData,
             theme,
+            API,
             getProjectsData,
             changeTheme
         }}>

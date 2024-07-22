@@ -7,7 +7,7 @@ const Projects = () => {
 
     return (
         <>
-            <h2>Projects</h2>
+            <h2>Proyectos</h2>
             <h3>{
                 projectsData &&
                     projectsData.map((project)=>( 

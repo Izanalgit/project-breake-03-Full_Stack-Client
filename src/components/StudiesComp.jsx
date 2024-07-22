@@ -39,8 +39,8 @@ const StudiesComp = ({props}) => {
         return (
             <div className="studies">
                 <h3>Trabajos anteriores</h3>
-                {studies.prevWorks.map((work)=>(
-                    <h4>{work[0]} <strong>{work[1]}</strong></h4>
+                {studies.prevWorks.map((work,index)=>(
+                    <h4 key={'preWork'+index}>{work[0]} <strong>{work[1]}</strong></h4>
                 ))}
             </div>
         );

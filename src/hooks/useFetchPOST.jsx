@@ -8,27 +8,27 @@ const useFetchPOST = (url,payload) => {
     const [errMsg, setErrMsg] = useState(null);
    
     useEffect(()=>{
+        if(payload)
+            axios.post(url,payload)
+                .then((response) => {
+                    setData(response);
+                })
+                .catch((error) => {
+                    if (error.response) {
+                        setErrMsg(`Error estado : ${error.response.status}`);
+                    } else if (error.request) {
+                        setErrMsg(`No responde`);
+                        console.log(error.request);
+                    } else {
+                        setErrMsg(`Error desconocido`);
+                        console.log(error.message);
+                    }
+                })
+                .finally(() => {
+                    setStatus(true);
+                })
 
-        axios.post(url,payload)
-            .then((response) => {
-                setData(response);
-            })
-            .catch((error) => {
-                if (error.response) {
-                    setErrMsg(`Error estado : ${error.response.status}`);
-                } else if (error.request) {
-                    setErrMsg(`No responde`);
-                    console.log(error.request);
-                } else {
-                    setErrMsg(`Error desconocido`);
-                    console.log(error.message);
-                }
-            })
-            .finally(() => {
-                setStatus(true);
-            })
-
-    },[url]);
+    },[url,payload]);
 
 
     return {data,status,errMsg};

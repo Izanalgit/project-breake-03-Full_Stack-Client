@@ -1,12 +1,12 @@
 import React from 'react';
 import useForm from '../../hooks/useForm';
 
-const FormContact = () => {
+const FormContact = ({props}) => {
   const { values, handleChange, reset } = useForm({ contact: '', message: '' });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(values);//POST TO API
+    props.getMsgToSend({values});
     reset();
   };
 
