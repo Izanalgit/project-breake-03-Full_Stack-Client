@@ -6,12 +6,7 @@ export const homeData = {
     softSkills:{
         frontEnd:["react","html","css"],
         backEnd:["node","express"],
-        lenguages:[
-            ["js"],
-            ["sql"],
-            ["php"],
-            ["c"]
-        ]
+        lenguages:["js","sql","php","c"]
     },
     pageBody:{
         title:"Full Stack Devolper",

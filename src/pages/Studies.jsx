@@ -1,10 +1,21 @@
+import StudiesComp from "../components/StudiesComp";
+
+import {studiesData} from "../data/studiesData";
 
 const Studies = () => {
-    return (
-      <>
-      <h2>Studies</h2>
-      </>
-    )
-  };
-  
-  export default Studies;
+
+    const {
+        formation,
+        prevWorks,
+        curriculum
+    } = studiesData;
+
+        return (
+        <>
+            <StudiesComp props={{formation}} />
+            <StudiesComp props={{prevWorks}} />
+        </>
+        )
+};
+    
+    export default Studies;
