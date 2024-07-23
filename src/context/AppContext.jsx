@@ -5,8 +5,13 @@ const AppContext = createContext();
 const AppProvaider = ({children}) => {
 
     const [projectsData, setProjectsData] = useState();
+    const [logedIn, setLogedIn] = useState(false);
     const [theme, setTheme] = useState('light');
     const API = "http://localhost:8080";
+
+    //Secure localStorage clean
+    localStorage.removeItem("atuhToken");
+    localStorage.removeItem("user");
 
     //Projects data
     const getProjectsData = (data) => {
@@ -20,13 +25,18 @@ const AppProvaider = ({children}) => {
         if(theme == 'dark') setTheme('light');
     }
 
+    //Loged check
+    const getLoged = (status) => setLogedIn(status);
+
     return (
         <AppContext.Provider value={{
             projectsData,
+            logedIn,
             theme,
             API,
             getProjectsData,
-            changeTheme
+            changeTheme,
+            getLoged
         }}>
             {children}
         </AppContext.Provider>

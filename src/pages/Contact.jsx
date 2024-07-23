@@ -3,7 +3,6 @@ import { useApp } from "../context/AppContext";
 import FormContact from "../components/forms/FormContact";
 import useFetchPOST from "../hooks/useFetchPOST";
 
-
 const Contact = () => {
 
     const [msgToSend, setMsgToSend] = useState(null);
