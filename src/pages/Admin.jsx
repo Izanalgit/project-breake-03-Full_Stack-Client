@@ -4,6 +4,7 @@ import { AdminProvaider } from "../context/AdminContext";
 import LogIn from "../components/LogIn";
 import LogOut from "../components/LogOut";
 import ProjectsAdmin from "../components/ProjectsAdmin";
+import MessagesAdmin from "../components/MessagesAdmin";
 
 const Admin = () => {
 
@@ -17,6 +18,7 @@ const Admin = () => {
             {logedIn && <> 
                 <LogOut />
                 <ProjectsAdmin />
+                <MessagesAdmin />
             </>}
         </AdminProvaider>
     </>

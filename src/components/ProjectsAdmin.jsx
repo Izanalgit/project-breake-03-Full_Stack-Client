@@ -90,8 +90,6 @@ const ProjectsAdmin = () => {
     const hadleDelete = (id) =>{
         setProjectID(id);
         setFetchPayloadDel({authToken:token[1]});
-    
-        console.log(fetchPayloadDel)
     }
 
     //API responses
@@ -130,7 +128,7 @@ const ProjectsAdmin = () => {
 
     return (
         <>
-            <h2 onClick={noForms}>Proyectos</h2>
+            <h2 onClick={noForms}>Proyectos subidos :</h2>
             {errAPI && <h5>{errAPI}</h5>}
             {newForm && <FormProject props={{getProject:getNewProject}}/>}
             {putForm && <FormProject props={{project,getProject:getPutProject}}/>}
