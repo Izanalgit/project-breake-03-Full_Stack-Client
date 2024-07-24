@@ -1,16 +1,20 @@
 import React from 'react';
 import useForm from '../../hooks/useForm';
 
-const FormProject = ({project}) => {
-    const initialValues = project
-        ? project
+const FormProject = ({props}) => {
+    const initialValues = props.project
+        ? { 
+            name: props.project.name, 
+            link: props.project.link ,
+            description: props.project.description
+        }
         :{ name: '', link: '',description: ''}
 
     const { values, handleChange, reset } = useForm(initialValues);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(values); // TO API
+        props.getProject(values)
         reset();
     };
 

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useApp } from "../context/AppContext";
 import { useAdmin } from "../context/AdminContext";
@@ -44,9 +43,9 @@ const LogOut = () => {
     return (
         <>
             {errAPI && <h5>{errAPI}</h5>}
-            {/* <Link to={"/"}> */}
-                <button onClick={handleClick}>LogOut</button>
-            {/* </Link> */}
+
+            <button onClick={handleClick}>LogOut</button>
+
         </>
     );
 }

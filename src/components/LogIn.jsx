@@ -10,7 +10,7 @@ const LogIn = () => {
     const [credentials, setCredentials] = useState(null);
     const [errAPI , setErrAPI] = useState (null);
 
-    const { getAtuhToken } = useAdmin();
+    const { getAtuhToken , throwToken} = useAdmin();
     const { API , getLoged } = useApp();
 
     const API_LOGIN = API + '/user/login';
@@ -31,12 +31,19 @@ const LogIn = () => {
     useEffect(()=>{
         if(errMsg)
             setErrAPI(errMsg);
-        if(data && !errMsg)
+        if(data)
             if(data.data.authToken){
                 getAtuhToken(data.data.user,data.data.authToken);
                 getLoged(true);
             }    
     },[status,data,errMsg])
+
+    //Init auth Token from context
+    useEffect(()=>{
+        const token = throwToken();
+        if(token)getLoged(true);
+        // if(token)console.log(token)
+    },[])
 
     return(
         <>

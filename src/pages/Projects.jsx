@@ -10,8 +10,8 @@ const Projects = () => {
             <h2>Proyectos</h2>
             <h3>{
                 projectsData &&
-                    projectsData.map((project)=>( 
-                        <Project props={project} key={project._id}/>
+                    projectsData.map((project,index)=>( 
+                        <Project props={project} key={'project' + index}/>
                     ))  
             }</h3>
         </>
