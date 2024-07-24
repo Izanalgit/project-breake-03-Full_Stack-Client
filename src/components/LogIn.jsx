@@ -42,7 +42,6 @@ const LogIn = () => {
     useEffect(()=>{
         const token = throwToken();
         if(token)getLoged(true);
-        // if(token)console.log(token)
     },[])
 
     return(

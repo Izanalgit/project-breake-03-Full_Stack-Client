@@ -7,7 +7,6 @@ import useFetchPOST from "../hooks/useFetchPOST";
 const LogOut = () => {
     const [token, setToken] = useState(null);
     const [fetchPayload, setFetchPayload] = useState(null);
-    const [errAPI , setErrAPI] = useState (null);
 
     const {API, getLoged} = useApp();
     const {cleanAtuhToken , throwToken} = useAdmin();
@@ -31,23 +30,18 @@ const LogOut = () => {
 
     //Clean token
     useEffect(()=>{
-        if(errMsg)
-            setErrAPI(errMsg);
+        if(errMsg){
+            alert("Parece que el servidor ha actualizado la encriptación...");
+            cleanAtuhToken();
+            getLoged(false);
+        }
         if(data && !errMsg){
             cleanAtuhToken();
             getLoged(false);
         }    
-    },[status,data,errMsg])
+    },[status])
 
-
-    return (
-        <>
-            {errAPI && <h5>{errAPI}</h5>}
-
-            <button onClick={handleClick}>LogOut</button>
-
-        </>
-    );
+    return (<button onClick={handleClick}>LogOut</button>);
 }
 
 export default LogOut;

@@ -9,7 +9,7 @@ const useFetchDELETE = (url,payload) => {
    
     useEffect(()=>{
         if(payload)
-            axios.delete(url,payload)
+            axios.delete(url,{data:payload})
                 .then((response) => {
                     setData(response);
                 })

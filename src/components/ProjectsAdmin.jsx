@@ -3,6 +3,7 @@ import { useApp } from "../context/AppContext";
 import { useAdmin } from "../context/AdminContext";
 import useFetchPOST from "../hooks/useFetchPOST";
 import useFetchPUT from "../hooks/useFetchPUT";
+import useFetchDELETE from "../hooks/useFetchDELETE";
 
 import FormProject from "./forms/FormProject";
 import Project from "./Project";
@@ -11,11 +12,17 @@ const ProjectsAdmin = () => {
     
     const [ newForm , setNewForm] = useState(false);
     const [ putForm , setPutForm] = useState(false);
+
     const [ newProject, setNewProject] = useState(null);
     const [ putProject, setPutProject] = useState(null);
+
     const [ project , setProject] = useState(null);
+
     const [fetchPayloadNew, setFetchPayloadNew] = useState(null);
     const [fetchPayloadPut, setFetchPayloadPut] = useState(null);
+    const [fetchPayloadDel, setFetchPayloadDel] = useState(null);
+
+    const [ projectID , setProjectID ] =useState(null);
     const [errAPI , setErrAPI] = useState (null);
     const [token , setToken] = useState(null);
 
@@ -24,8 +31,21 @@ const ProjectsAdmin = () => {
 
     const API_PROJS = API + '/projects';
 
-    const {data: newData,status: newStatus,errMsg: newErrMsg} = useFetchPOST (API_PROJS,fetchPayloadNew);
-    const {data: putData,status: putStatus,errMsg: putErrMsg} = useFetchPUT (API_PROJS,fetchPayloadPut);
+    const {
+        data: newData,
+        status: newStatus,
+        errMsg: newErrMsg
+    } = useFetchPOST (API_PROJS,fetchPayloadNew);
+    const {
+        data: putData,
+        status: putStatus,
+        errMsg: putErrMsg
+    } = useFetchPUT (API_PROJS +'/'+ projectID,fetchPayloadPut);
+    const {
+        data: delData,
+        status: delStatus,
+        errMsg: delErrMsg
+    } = useFetchDELETE (API_PROJS +'/'+ projectID,fetchPayloadDel);
 
     //Change forms states
     const addNewProject = (state) => {
@@ -50,21 +70,62 @@ const ProjectsAdmin = () => {
     //Fetch trigers
     useEffect(()=>{
         if(newProject){
-            console.log(newProject) //POST a la API (mirar docs para el payload)
+            setFetchPayloadNew({
+                payload:newProject,
+                authToken:token[1]
+            })
+            console.log(newProject,token[1])
         }
     },[newProject])
 
     useEffect(()=>{
         if(putProject){
-            console.log(putProject,project._id) //PUT a la API (mirar docs para el payload)
+            setFetchPayloadPut({
+                payload:putProject,
+                authToken:token[1]
+            })
         }
     },[putProject])
+
+    const hadleDelete = (id) =>{
+        setProjectID(id);
+        setFetchPayloadDel({authToken:token[1]});
+    
+        console.log(fetchPayloadDel)
+    }
+
+    //API responses
+    useEffect(()=>{
+        if(newErrMsg)
+            setErrAPI(newErrMsg);
+        if(newData){
+            alert("Nuevo proyecto añadido con exito.");
+            window.location.reload();
+        }  
+    },[newStatus,newData,newErrMsg])
+
+    useEffect(()=>{
+        if(putErrMsg)
+            setErrAPI(putErrMsg);
+        if(putData){
+            alert("Proyecto modificado con exito.");
+            window.location.reload();
+        }  
+    },[putStatus,putData,putErrMsg])
+
+    useEffect(()=>{
+        if(delErrMsg)
+            setErrAPI(delErrMsg);
+        if(delData){
+            alert("Proyecto eliminado con exito.");
+            window.location.reload();
+        }  
+    },[delStatus,delData,delErrMsg])
 
     //Init auth Token from context
     useEffect(()=>{
         const token = throwToken();
         setToken(token);
-        if(token)console.log(token[1]) // <- acuerdate del if por si no ha cargado
     },[])
 
     return (
@@ -82,8 +143,12 @@ const ProjectsAdmin = () => {
                                 <Project props={project} />
                                 <button onClick={()=>{
                                     setProject(project);
+                                    setProjectID(project._id);
                                     addPutProject(true);
-                                }}>Modificar</button>                            
+                                }}>Modificar</button>
+                                <button onClick={()=>{
+                                    hadleDelete(project._id);
+                                }}>Eliminar</button>                            
                             </div>
                         ))    
                     }
