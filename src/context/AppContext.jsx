@@ -6,7 +6,7 @@ const AppProvaider = ({children}) => {
 
     const [projectsData, setProjectsData] = useState();
     const [logedIn, setLogedIn] = useState(false);
-    const API = "http://localhost:8080";
+    const API = "https://project-breake-03-full-stack.onrender.com";
 
     //Projects data
     const getProjectsData = (data) => {
