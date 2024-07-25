@@ -11,7 +11,7 @@ export const homeData = {
     },
     pageBody:{
         title:"Full Stack Devolper",
-        lowTitle:"Apasionado de la programación, defensor de JS y temeroso del CSS, lore ipsum etc",
+        lowTitle:"Apasionado de la programación, defensor de JS y temeroso del CSS, lore ipsum etc ... en construcción ...",
         aboutMe:"Lore ipsum gran chat GPT yo te invoco lore ipsum"
     }
 }
