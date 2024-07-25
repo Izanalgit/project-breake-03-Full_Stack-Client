@@ -127,17 +127,21 @@ const ProjectsAdmin = () => {
     },[])
 
     return (
-        <>
-            <h2 onClick={noForms}>Proyectos subidos :</h2>
+        <>  
+            <div className="adminTitle">
+                <h2 onClick={noForms}>Proyectos subidos :</h2>
+                {(!newForm && !putForm) && 
+                    <button onClick={()=>addNewProject(true)}>+</button>}
+            </div>
             {errAPI && <h5>{errAPI}</h5>}
             {newForm && <FormProject props={{getProject:getNewProject}}/>}
             {putForm && <FormProject props={{project,getProject:getPutProject}}/>}
             {(!newForm && !putForm) && 
                 <>
-                    <button onClick={()=>addNewProject(true)}>+</button>
-                    {projectsData &&
+                    {(projectsData && !projectsData.message) &&
+                        <div className='projectsContainer dataContainer'>{
                         projectsData.map((project)=>(
-                            <div key={project._id}>
+                            <div  key={project._id}>
                                 <Project props={project} />
                                 <button onClick={()=>{
                                     setProject(project);
@@ -148,7 +152,8 @@ const ProjectsAdmin = () => {
                                     hadleDelete(project._id);
                                 }}>Eliminar</button>                            
                             </div>
-                        ))    
+                        ))   
+                        }</div> 
                     }
                 </>
             } 

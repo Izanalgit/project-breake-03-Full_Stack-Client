@@ -1,0 +1,30 @@
+.frontPage{
+    width: 100%;
+    margin: 4%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.titleMain{
+    width: 50%;
+    
+}
+.personalCard{
+    display:flex;
+    justify-items: center;    
+}
+.personalImage img{
+    max-height: 18em;
+
+    border-radius: .7em;
+}
+.personalLogos{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: -.5em;
+}
+.personalLogos img{
+    max-height: 15%;
+    padding: 3%;
+}
+

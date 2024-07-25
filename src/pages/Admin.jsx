@@ -6,22 +6,29 @@ import LogOut from "../components/LogOut";
 import ProjectsAdmin from "../components/ProjectsAdmin";
 import MessagesAdmin from "../components/MessagesAdmin";
 
+import '../css/Admin.css';
+import '../css/Projects.css';
+import '../css/Messages.css';
+
 const Admin = () => {
 
     const {logedIn} = useApp();
 
     return (
-    <>
-        <h2>Admin dashboard</h2>
-        <AdminProvaider>
-            {!logedIn && <LogIn />}
-            {logedIn && <> 
-                <LogOut />
-                <ProjectsAdmin />
-                <MessagesAdmin />
-            </>}
-        </AdminProvaider>
-    </>
+    <AdminProvaider>
+        <div className="adminTitle">
+            <h2>Admin dashboard</h2>
+            {logedIn && <LogOut />}
+        </div>
+        {!logedIn && <LogIn />}
+        {logedIn && 
+            <div className="adminCointainer">
+                <div><ProjectsAdmin /></div> 
+                <div><MessagesAdmin /></div>
+            </div>
+        }
+    </AdminProvaider>
+    
     )
 };
   

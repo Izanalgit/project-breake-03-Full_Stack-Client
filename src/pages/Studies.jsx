@@ -4,6 +4,8 @@ import {studiesData} from "../data/studiesData";
 
 // FALTA EL PDF DEL CV
 
+import '../css/Studies.css';
+
 const Studies = () => {
 
     const {
@@ -13,10 +15,10 @@ const Studies = () => {
     } = studiesData;
 
         return (
-        <>
+        <div className="studiesContainer">
             <StudiesComp props={{formation}} />
             <StudiesComp props={{prevWorks}} />
-        </>
+        </div>
         )
 };
     

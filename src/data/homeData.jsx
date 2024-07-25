@@ -2,6 +2,7 @@ export const homeData = {
     personalInfo:{
         name: "Izan Alvarez Rosado",
         gitHub: "https://github.com/Izanalgit",
+        linkedIn: "https://www.linkedin.com/in/izan-alvarez-rosado-308b082bb"
     },
     softSkills:{
         frontEnd:["react","html","css"],

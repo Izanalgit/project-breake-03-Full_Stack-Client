@@ -1,0 +1,25 @@
+.skillsContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.softSkills{
+    width: 30%;    
+}
+.typeSkillsContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.typeSkillsContainer p{
+    border: 1px solid grey;
+    border-radius: .3em;
+    margin: 3%;
+    width: 30%;
+    height: 2em;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

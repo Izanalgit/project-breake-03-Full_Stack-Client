@@ -1,13 +1,15 @@
 import {Link} from 'react-router-dom';
 
+import '../css/NavBar.css'
+
 const NavBar = () => {
     return(
         <nav>
-            <div><Link to="/">Inicio</Link></div>
-            <div><Link to="/projects">Proyectos</Link></div>
-            <div><Link to="/studies">Curriculum</Link></div>
-            <div><Link to="/contact">Contactame </Link></div>
-            <div><Link to="/admin">Admin</Link></div>
+            <Link to="/" className={'butNav glow'}>Inicio</Link>
+            <Link to="/projects" className={'butNav glow'}>Proyectos</Link>
+            <Link to="/studies" className={'butNav glow'}>Curriculum</Link>
+            <Link to="/contact" className={'butNav glow'}>Contactame </Link>
+            <Link to="/admin" className={'butNav glow'}>Admin</Link>
         </nav>
     );
 }

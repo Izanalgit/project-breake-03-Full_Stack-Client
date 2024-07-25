@@ -1,0 +1,17 @@
+.projectsContainer{
+    max-width: 70%;
+
+    margin: 0 auto;
+    padding: 3%;
+}
+
+.project{
+    margin: 2% 0;
+    padding: 2%;
+
+    text-align: left;
+
+    border: 1px solid grey;
+    border-radius: .5em;
+    
+}

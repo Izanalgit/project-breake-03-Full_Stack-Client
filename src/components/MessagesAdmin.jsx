@@ -67,18 +67,21 @@ const MessagesAdmin = () => {
     return (
         <>
             <h2>Mensajes recividos :</h2>
-            {errAPI && <h5>{errAPI}</h5>}
-            {messages &&
-                messages.map((message)=>(
-                    <div key={message._id}>
-                        <Message props={{message}} />
-                        <button onClick={()=>{
-                            hadleDelete(message._id);
-                        }
-                        }>Eliminar</button>
-                    </div>
-                ))
-            }
+            <div className="messagesContainer dataContainer">
+                {errAPI && <h5>{errAPI}</h5>}
+                {console.log(messages)}
+                {(messages && !messages.message) &&
+                    messages.map((message)=>(
+                        <div key={message._id}>
+                            <Message props={{message}} />
+                            <button onClick={()=>{
+                                hadleDelete(message._id);
+                            }
+                            }>Eliminar</button>
+                        </div>
+                    ))
+                }
+            </div>
         </>
     );
 }

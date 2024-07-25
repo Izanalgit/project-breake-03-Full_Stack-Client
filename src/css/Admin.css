@@ -1,0 +1,30 @@
+.adminTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminTitle button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 2em;
+
+    margin-left: 1%;
+}
+.adminCointainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.adminCointainer div{
+    width: 100%;
+}
+
+.dataContainer{
+    max-height: 20em;
+    overflow:auto;
+}
+.dataContainer::-webkit-scrollbar {
+    display: none;
+}

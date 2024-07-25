@@ -11,7 +11,7 @@ const FormLogIn = ({props}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='form'>
             <div>
                 <label>Usuario:</label>
                 <input type="text" name="name" value={values.name} onChange={handleChange} />

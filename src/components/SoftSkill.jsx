@@ -3,11 +3,11 @@ const SoftSkills = ({title,skills}) => {
     return (
         <div className="softSkills">
             <h3>{title}</h3>
-            <p>
+            <div className="typeSkillsContainer">
                 {skills.map((skill,index)=>(
-                    <span key={title + index}>{skill} </span>
+                    <p key={title + index}>{skill} </p>
                 ))}
-            </p>
+            </div>
         </div>
     );
 }

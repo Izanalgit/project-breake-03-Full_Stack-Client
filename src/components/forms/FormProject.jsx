@@ -19,7 +19,7 @@ const FormProject = ({props}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='form'>
         <div>
             <label>Proyecto :</label>
             <input type="text" name="name" value={values.name} onChange={handleChange} />
@@ -30,7 +30,7 @@ const FormProject = ({props}) => {
         </div>
         <div>
             <label>Descripción :</label>
-            <input type="text" name="description" value={values.description} onChange={handleChange} />
+            <textarea name="description" value={values.description} onChange={handleChange} />
         </div>
         <button type="submit">Enviar</button>
         </form>

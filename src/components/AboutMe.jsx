@@ -2,7 +2,7 @@ const AboutMe = ({props}) => {
 
     return (
         <div className="aboutMe">
-            <h3>Sobre mi</h3>
+            <h2>Sobre mi</h2>
             <p>{props.pageBody.aboutMe}</p>
         </div>
     );

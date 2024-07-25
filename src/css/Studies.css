@@ -1,0 +1,21 @@
+.studiesContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 100%;
+
+    margin-top: 2%;
+}
+.studies{
+    text-align: left;
+    width: 30%;
+    margin: 0 auto;
+}
+.studies h2{
+    text-align: center;
+    border-bottom: 1px solid grey;
+}
+.studies strong{
+    margin-left: 1%;
+}

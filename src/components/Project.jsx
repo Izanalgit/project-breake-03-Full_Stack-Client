@@ -5,7 +5,7 @@ const Project = ({props}) => {
     }
 
     return (
-        <div className="project" onClick={handleClick}>
+        <div className="project glow" onClick={handleClick}>
             <h3>{props.name}</h3>
             <p>{props.description}</p>
         </div>

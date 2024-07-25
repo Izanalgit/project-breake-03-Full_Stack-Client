@@ -1,0 +1,20 @@
+nav{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 100%;
+
+    padding-bottom: 1.5%;
+
+    border-bottom: 1px solid black;
+}
+nav .butNav{
+    width: 15%;
+    height: 2em;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

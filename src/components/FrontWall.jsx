@@ -1,5 +1,6 @@
 import { useState } from "react";
 import gitHubLogo from "../assets/gitHub.png";
+import linkedInLogo from "../assets/linkedin.png";
 import personalImamge from "../assets/personal.png"
 
 const FrontWall = ({props}) => {
@@ -7,23 +8,37 @@ const FrontWall = ({props}) => {
     const [lowTitle, setLowTitle] = useState(props.pageBody.lowTitle);
     const [name, setName] = useState(props.personalInfo.name);
     const [gitHub, setGitHub] = useState(props.personalInfo.gitHub);
+    const [linkedIn, setLinkedIn] = useState(props.personalInfo.linkedIn);
 
-    const handleGitHub = () => {
-        location.href = `${gitHub}`;
+    const handleLogo = (url) => {
+        location.href = `${url}`;
     }
 
     return (
         <div className="frontPage">
-            <div className="title">
+            <div className="titleMain">
                 <h1>{title}</h1>
                 <h2>{lowTitle}</h2>
             </div>
             <div className="personalCard">
-                <div>
+                <div className="personalImage">
                     <img src={personalImamge} alt="personal image"/>
                     <h3>{name}</h3>
                 </div>
-                <img src={gitHubLogo} alt="gitHubLink" onClick={handleGitHub}/>
+                <div className="personalLogos">
+                    <img 
+                        src={gitHubLogo} 
+                        alt="gitHub Link" 
+                        onClick={()=>handleLogo(gitHub)}
+                        className="logo"
+                    />
+                    <img 
+                        src={linkedInLogo} 
+                        alt="linkedIn Link" 
+                        onClick={()=>handleLogo(linkedIn)} 
+                        className="logo"
+                    />
+                </div>
             </div>
         </div>
     );

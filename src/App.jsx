@@ -3,6 +3,8 @@ import AppRoutes from "./routes/AppRoutes";
 import { useApp } from "./context/AppContext";
 import useFetchGET from "./hooks/useFetchGET";
 
+import './css/App.css';
+
 const App = () => {
 
     const {API,getProjectsData} = useApp();

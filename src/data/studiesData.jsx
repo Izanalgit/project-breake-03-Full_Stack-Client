@@ -8,7 +8,7 @@ export const studiesData = {
     prevWorks:[
         ["KFC Parets", "2022-2024"],
         ["Soltek Gestiona", "2021-2022"],
-        ["Perforaciones Santaeulalia", "2016-2021"]
+        ["Perforaciones Santaeulalia", "2015-2021"]
     ],
     curriculum:""
 }

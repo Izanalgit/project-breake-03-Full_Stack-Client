@@ -11,14 +11,14 @@ const FormContact = ({props}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
       <div>
         <label>Remitente:</label>
         <input type="email" name="contact" value={values.contact} onChange={handleChange} />
       </div>
       <div>
         <label>Mensaje:</label>
-        <input type="text" name="message" value={values.message} onChange={handleChange} />
+        <textarea name="message" value={values.message} onChange={handleChange} />
       </div>
       <button type="submit">Enviar</button>
     </form>
