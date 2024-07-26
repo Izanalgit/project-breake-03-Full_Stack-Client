@@ -13,11 +13,11 @@ const AppRoutes = () =>{
         <>
             <NavBar />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/studies" element={<Studies />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/admin" element={<Admin />} />
+                <Route path="/project-breake-03-Full_Stack-Client/" element={<Home />} />
+                <Route path="/project-breake-03-Full_Stack-Client/projects" element={<Projects />} />
+                <Route path="/project-breake-03-Full_Stack-Client/studies" element={<Studies />} />
+                <Route path="/project-breake-03-Full_Stack-Client/contact" element={<Contact />} />
+                <Route path="/project-breake-03-Full_Stack-Client/admin" element={<Admin />} />
             </Routes>
         </>
         </Router>
