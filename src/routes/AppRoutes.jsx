@@ -9,7 +9,7 @@ import Admin from "../pages/Admin";
 
 const AppRoutes = () =>{
     return(
-        <Router>
+        <Router basename="/project-breake-03-Full_Stack-Client">
         <>
             <NavBar />
             <Routes>
