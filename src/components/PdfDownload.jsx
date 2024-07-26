@@ -3,10 +3,10 @@ import React from "react";
 const PdfDownload = () => {
 
     const onButtonClick = () => {
-        const pdfUrl = 'Curriculumvitae.pdf';
+        const pdfUrl = '/project-breake-03-Full_Stack-Client/Curriculumvitae.pdf';
         const link = document.createElement("a");
         link.href = pdfUrl;
-        link.download = "Curriculumvitae.pdf";
+        link.download = "CV_IAR.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
