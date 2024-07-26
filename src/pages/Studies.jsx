@@ -1,24 +1,22 @@
 import StudiesComp from "../components/StudiesComp";
+import PdfDownload from "../components/PdfDownload";
 
 import {studiesData} from "../data/studiesData";
-
-// FALTA EL PDF DEL CV
 
 import '../css/Studies.css';
 
 const Studies = () => {
 
-    const {
-        formation,
-        prevWorks,
-        curriculum
-    } = studiesData;
+    const { formation, prevWorks } = studiesData;
 
         return (
-        <div className="studiesContainer">
-            <StudiesComp props={{formation}} />
-            <StudiesComp props={{prevWorks}} />
-        </div>
+        <>
+            <div className="studiesContainer">
+                <StudiesComp props={{formation}} />
+                <StudiesComp props={{prevWorks}} />
+            </div>
+            <PdfDownload />
+        </>
         )
 };
     
