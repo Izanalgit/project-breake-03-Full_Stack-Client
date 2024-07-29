@@ -33,10 +33,11 @@ const Contact = () => {
     return (
         <>
             <h2>Contactame :</h2>
-            {errAPI && 
-                errAPI.map((error, index)=>(
-                    <h5 key={`ERROR+${index}`}>{error.msg}</h5>
-                ))
+            {errAPI &&
+                errAPI == Array && 
+                    errAPI.map((error, index)=>(
+                        <h5 key={`ERROR+${index}`}>{error.msg}</h5>
+                    ))
             }
             <FormContact props={{getMsgToSend}}/>
         </>
