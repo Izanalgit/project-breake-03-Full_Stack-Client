@@ -30,14 +30,15 @@ const LogOut = () => {
 
     //Clean token
     useEffect(()=>{
-        if(data && !errMsg){
-            cleanAtuhToken();
-            getLoged(false);
-        }else{
+        if(!data){
             alert("Parece que el servidor ha actualizado la encriptación...");
             cleanAtuhToken();
             getLoged(false);
-        }    
+        }   
+        if(data && !errMsg){
+            cleanAtuhToken();
+            getLoged(false);
+        } 
     },[status])
 
     return (<button onClick={handleClick}>LogOut</button>);
