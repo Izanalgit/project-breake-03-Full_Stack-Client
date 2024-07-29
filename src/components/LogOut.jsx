@@ -20,7 +20,6 @@ const LogOut = () => {
             payload: {name: token[0]},
             authToken: token[1]
         })
-       
     }
 
     //Init auth Token from context
@@ -31,11 +30,14 @@ const LogOut = () => {
 
     //Clean token
     useEffect(()=>{
-        if(errMsg)
-            alert(errMsg);
-            
-        cleanAtuhToken();
-        getLoged(false);    
+        if(data && !errMsg){
+            cleanAtuhToken();
+            getLoged(false);
+        }else{
+            alert("Parece que el servidor ha actualizado la encriptación...");
+            cleanAtuhToken();
+            getLoged(false);
+        }    
     },[status])
 
     return (<button onClick={handleClick}>LogOut</button>);
