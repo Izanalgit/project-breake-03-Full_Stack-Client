@@ -15,7 +15,7 @@ const useFetchDELETE = (url,payload) => {
                 })
                 .catch((error) => {
                     if (error.response) {
-                        setErrMsg(`Error estado : ${error.response.status}`);
+                        setErrMsg(error.response.data.errors);
                     } else if (error.request) {
                         setErrMsg(`No responde`);
                         console.log(error.request);
