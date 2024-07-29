@@ -16,7 +16,10 @@ const useFetchPUT = (url,payload) => {
                 })
                 .catch((error) => {
                     if (error.response) {
-                        setErrMsg(error.response.data.errors);
+                        if(error.response.data.errors)
+                            setErrMsg(error.response.data.errors);
+                        else
+                            setErrMsg(`Error estado : ${error.response.status}`);
                     } else if (error.request) {
                         setErrMsg(`No responde`);
                         console.log(error.request);

@@ -30,7 +30,7 @@ const LogOut = () => {
 
     //Clean token
     useEffect(()=>{
-        if(!data){
+        if(errMsg){
             alert("Parece que el servidor ha actualizado la encriptación...");
             cleanAtuhToken();
             getLoged(false);
