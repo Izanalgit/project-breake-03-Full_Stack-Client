@@ -36,7 +36,7 @@ const LogOut = () => {
             
         cleanAtuhToken();
         getLoged(false);    
-    },[status,errMsg])
+    },[status])
 
     return (<button onClick={handleClick}>LogOut</button>);
 }
