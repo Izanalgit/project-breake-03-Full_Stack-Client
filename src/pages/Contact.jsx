@@ -3,6 +3,8 @@ import { useApp } from "../context/AppContext";
 import FormContact from "../components/forms/FormContact";
 import useFetchPOST from "../hooks/useFetchPOST";
 
+import { contactData } from "../data/contactData";
+
 const Contact = () => {
 
     const [msgToSend, setMsgToSend] = useState(null);
@@ -33,6 +35,7 @@ const Contact = () => {
     return (
         <>
             <h2>Contactame :</h2>
+            <h5>{contactData.message}</h5>
             {errAPI &&
                 errAPI == Array && 
                     errAPI.map((error, index)=>(

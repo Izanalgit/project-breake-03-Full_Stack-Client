@@ -18,7 +18,7 @@ const FrontWall = ({props}) => {
         <div className="frontPage">
             <div className="titleMain">
                 <h1>{title}</h1>
-                <h2>{lowTitle}</h2>
+                <h4>{lowTitle}</h4>
             </div>
             <div className="personalCard">
                 <div className="personalImage">
