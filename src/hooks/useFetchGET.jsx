@@ -15,7 +15,7 @@ const useFetchGET = (url) => {
             })
             .catch((error) => {
                 if (error.response) {
-                    setErrMsg(`Error estado : ${error.response.status}`);
+                    setErrMsg(`Error ${error.response.status} : ${error.response.data.message}`);
                 } else if (error.request) {
                     setErrMsg(`No responde`);
                     console.log(error.request);

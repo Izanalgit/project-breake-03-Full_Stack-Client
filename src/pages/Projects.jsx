@@ -11,6 +11,7 @@ const Projects = () => {
         <>
             <h2>Proyectos</h2>
             <div className="projectsContainer">
+                {!projectsData && <h5>Conectando con la API ...</h5>}
                 {(projectsData && !projectsData.message) &&
                     projectsData.map((project,index)=>( 
                         <Project props={project} key={'project' + index}/>

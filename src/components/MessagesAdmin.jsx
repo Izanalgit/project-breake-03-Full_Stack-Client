@@ -68,12 +68,7 @@ const MessagesAdmin = () => {
         <>
             <h2>Mensajes recividos :</h2>
             <div className="messagesContainer dataContainer">
-                {errAPI &&
-                    errAPI == Array &&
-                        errAPI.map((error, index)=>(
-                            <h5 key={`ERROR+${index}`}>{error.msg}</h5>
-                        ))
-                }
+                {errAPI && <h5 >{errAPI}</h5>}
                 {(messages && !messages.message) &&
                     messages.map((message)=>(
                         <div key={message._id}>

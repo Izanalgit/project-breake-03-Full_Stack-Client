@@ -18,7 +18,7 @@ const App = () => {
     const sleepApiMsg = "La API esta invernando, puede que algun contenido tarde en cargar...";
 
     useEffect(()=>{
-        if(!health && pingAPI) alert(sleepApiMsg)
+        if(pingAPI && !health) alert(sleepApiMsg);
     },[pingAPI]);
       
     useEffect(()=>{

@@ -46,12 +46,7 @@ const LogIn = () => {
 
     return(
         <>
-            {errAPI &&
-                errAPI == Array && 
-                    errAPI.map((error, index)=>(
-                        <h5 key={`ERROR+${index}`}>{error.msg}</h5>
-                    ))
-            }
+            {errAPI && <h5 >{errAPI}</h5>}
             <FormLogIn props={{getCredentials}} />
         </>
     );

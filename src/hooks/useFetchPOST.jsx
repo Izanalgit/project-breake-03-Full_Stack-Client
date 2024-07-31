@@ -18,7 +18,7 @@ const useFetchPOST = (url,payload) => {
                         if(error.response.data.errors)
                             setErrMsg(error.response.data.errors);
                         else
-                            setErrMsg(`Error estado : ${error.response.status}`);
+                            setErrMsg(`Error ${error.response.status} : ${error.response.data.message}`);
                     } else if (error.request) {
                         setErrMsg(`No responde`);
                         console.log(error.request);
