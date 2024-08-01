@@ -37,7 +37,7 @@ const Contact = () => {
     
     return (
         <>
-            <h2>Contactame :</h2>
+            <h2>Contáctame :</h2>
             <h5>{contactData.message}</h5>
             <ErrorsAPI errAPI={errAPI} />
             <FormContact props={{getMsgToSend}}/>
