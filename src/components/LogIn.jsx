@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { useAdmin } from '../context/AdminContext';
 import useFetchPOST from '../hooks/useFetchPOST';
+
 import FormLogIn from "./forms/FormLogIn";
+import ErrorsAPI from './ErrorsAPI';
 
 const LogIn = () => {
 
@@ -46,7 +48,7 @@ const LogIn = () => {
 
     return(
         <>
-            {errAPI && <h5 >{errAPI}</h5>}
+            <ErrorsAPI errAPI={errAPI} />
             <FormLogIn props={{getCredentials}} />
         </>
     );

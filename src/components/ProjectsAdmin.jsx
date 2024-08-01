@@ -7,6 +7,7 @@ import useFetchDELETE from "../hooks/useFetchDELETE";
 
 import FormProject from "./forms/FormProject";
 import Project from "./Project";
+import ErrorsAPI from "./ErrorsAPI";
 
 const ProjectsAdmin = () => {
     
@@ -55,6 +56,7 @@ const ProjectsAdmin = () => {
         setPutForm(state);
     }
     const noForms = () =>{
+        setErrAPI(null);
         addNewProject(false);
         addPutProject(false);
     }
@@ -96,6 +98,7 @@ const ProjectsAdmin = () => {
         if(newErrMsg)
             setErrAPI(newErrMsg);
         if(newData){
+            setErrAPI(null);
             alert("Nuevo proyecto añadido con exito.");
             window.location.reload();
         }  
@@ -105,6 +108,7 @@ const ProjectsAdmin = () => {
         if(putErrMsg)
             setErrAPI(putErrMsg);
         if(putData){
+            setErrAPI(null);
             alert("Proyecto modificado con exito.");
             window.location.reload();
         }  
@@ -132,12 +136,8 @@ const ProjectsAdmin = () => {
                 {(!newForm && !putForm) && 
                     <button onClick={()=>addNewProject(true)}>+</button>}
             </div>
-            {errAPI &&
-                errAPI == Array && 
-                    errAPI.map((error, index)=>(
-                        <h5 key={`ERROR+${index}`}>{error.msg}</h5>
-                    ))
-            }
+            <ErrorsAPI errAPI={errAPI} />
+
             {newForm && <FormProject props={{getProject:getNewProject}}/>}
             {putForm && <FormProject props={{project,getProject:getPutProject}}/>}
             {(!newForm && !putForm) && 

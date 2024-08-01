@@ -4,6 +4,7 @@ import FormContact from "../components/forms/FormContact";
 import useFetchPOST from "../hooks/useFetchPOST";
 
 import { contactData } from "../data/contactData";
+import ErrorsAPI from "../components/ErrorsAPI";
 
 const Contact = () => {
 
@@ -26,8 +27,10 @@ const Contact = () => {
     },[msgToSend])
     
     useEffect(()=>{
-        if(data && !errMsg)
+        if(data && !errMsg){
+            setErrAPI(null);
             alert("Mensaje enviado con exito!");
+        }
         if(errMsg)
             setErrAPI(errMsg);
     },[status,errMsg])
@@ -36,12 +39,7 @@ const Contact = () => {
         <>
             <h2>Contactame :</h2>
             <h5>{contactData.message}</h5>
-            {errAPI &&
-                errAPI == Array && 
-                    errAPI.map((error, index)=>(
-                        <h5 key={`ERROR+${index}`}>{error.msg}</h5>
-                    ))
-            }
+            <ErrorsAPI errAPI={errAPI} />
             <FormContact props={{getMsgToSend}}/>
         </>
     )

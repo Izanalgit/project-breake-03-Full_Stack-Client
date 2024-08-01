@@ -5,6 +5,7 @@ import useFetchPOST from "../hooks/useFetchPOST";
 import useFetchDELETE from "../hooks/useFetchDELETE";
 
 import Message from "./Message";
+import ErrorsAPI from "./ErrorsAPI";
 
 const MessagesAdmin = () => {
 
@@ -51,6 +52,7 @@ const MessagesAdmin = () => {
         if(postErrMsg)
             setErrAPI(postErrMsg);
         if(postData){
+            setErrAPI(null);
             setMessages(postData.data);
         }  
     },[postStatus,postData,postErrMsg])
@@ -59,6 +61,7 @@ const MessagesAdmin = () => {
         if(delErrMsg)
             setErrAPI(delErrMsg);
         if(delData){
+            setErrAPI(null);
             alert("Mensaje eliminado con exito.");
             window.location.reload();
         }  
@@ -66,9 +69,9 @@ const MessagesAdmin = () => {
 
     return (
         <>
-            <h2>Mensajes recividos :</h2>
+            <h2>Mensajes recibidos :</h2>
             <div className="messagesContainer dataContainer">
-                {errAPI && <h5 >{errAPI}</h5>}
+                <ErrorsAPI errAPI={errAPI} />
                 {(messages && !messages.message) &&
                     messages.map((message)=>(
                         <div key={message._id}>
