@@ -15,3 +15,10 @@
     border-radius: .5em;
     
 }
+
+@media (max-width: 800px) {
+    .projectsContainer{
+        max-width: 95%;
+        padding: 0;
+    }
+}

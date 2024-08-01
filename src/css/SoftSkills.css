@@ -23,3 +23,13 @@
     align-items: center;
     
 }
+
+@media (max-width: 800px) {
+    .skillsContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .softSkills{
+        width: 100%;    
+    }
+}

@@ -28,3 +28,40 @@
     padding: 3%;
 }
 
+@media (max-width: 800px) {
+    .frontPage{
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .titleMain{
+        width: 100%;  
+    }
+    .titleMain h4{
+        margin-top: 5%;
+        width: 100%;  
+    }
+    .personalCard{
+        margin-top: 3%;
+        max-width: 30%;
+        padding: 5%;
+    }
+    .personalImage {
+        max-height: 2em;
+    
+    }
+    .personalImage img{
+        max-height: 5em;
+    
+        border-radius: .7em;
+    }
+    .personalLogos{
+        margin-left: -40%;  
+    }
+    .personalLogos img{
+        max-height: 9%;
+        padding: 0;
+    }
+}

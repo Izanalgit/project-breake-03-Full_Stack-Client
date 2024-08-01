@@ -28,3 +28,10 @@
 .dataContainer::-webkit-scrollbar {
     display: none;
 }
+
+
+@media (max-width: 800px) {
+    .adminCointainer{
+        flex-direction: column;
+    }
+}

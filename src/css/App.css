@@ -68,3 +68,10 @@
   border-radius: .5em;
   box-shadow:inset 0px 0px 6px 3px #646cffaa;
 }
+
+
+@media (max-width: 800px) {
+  .form {
+    width: 90%;
+  }
+}

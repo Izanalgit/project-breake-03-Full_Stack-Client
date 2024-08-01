@@ -19,3 +19,11 @@
 .studies strong{
     margin-left: 1%;
 }
+
+@media (max-width: 800px) {
+    .studiesContainer{
+        flex-direction: column;
+    }
+    .studies{
+        width: 100%;}
+  }
