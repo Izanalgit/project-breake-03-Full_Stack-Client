@@ -32,4 +32,7 @@
     .softSkills{
         width: 100%;    
     }
+    .typeSkillsContainer p{
+        width: 15%;
+    }
 }
