@@ -11,7 +11,7 @@ const FrontWall = ({props}) => {
     const [linkedIn, setLinkedIn] = useState(props.personalInfo.linkedIn);
 
     const handleLogo = (url) => {
-        location.href = `${url}`;
+        window.open(`${url}`,'_blank');
     }
 
     return (

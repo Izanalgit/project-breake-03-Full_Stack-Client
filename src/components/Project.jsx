@@ -1,7 +1,8 @@
 const Project = ({props}) => {
 
     const handleClick = () => {
-        location.href = `${props.link}`;
+        if(props.link)
+            window.open(`${props.link}`,'_blank');
     }
 
     return (
