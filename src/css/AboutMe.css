@@ -11,4 +11,8 @@
         margin-top: 1%;
         margin-left: 2%;
     }
+
+    .aboutMe p{
+        width: 90%;
+    }
 }
